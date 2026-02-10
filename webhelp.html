@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebHelp - Aide numérique pour les seniors</title>
+    <style>
+        /* Charte Graphique basée sur tes slides (Bleu et Orange) */
+        :root {
+            --primary-blue: #2c7bb6;
+            --primary-orange: #f58232;
+            --light-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        .logo span { color: var(--primary-orange); }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-button:hover { background-color: #e06d1b; }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(rgba(44, 123, 182, 0.9), rgba(44, 123, 182, 0.8)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 { font-size: 3rem; margin-bottom: 20px; }
+        header p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px auto; }
+
+        /* Sections Générales */
+        section { padding: 60px 20px; text-align: center; }
+        h2 { color: var(--primary-blue); font-size: 2.2rem; margin-bottom: 40px; }
+        
+        /* Section Services */
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-orange);
+        }
+
+        /* Section Pourquoi Nous */
+        .benefits { background-color: var(--light-bg); }
+        .benefits-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .benefits-list li { margin-bottom: 15px; list-style: none; }
+        .benefits-list li::before {
+            content: "✔"; 
+            color: var(--primary-orange);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1.5em;
+        }
+
+        /* Section Fondateur */
+        .founder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+        .founder-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-blue);
+        }
+        .founder-text { text-align: left; flex: 1; min-width: 300px; }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .founder { text-align: center; }
+            .founder-text { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">WEB<span>HELP</span></div>
+        <div class="nav-links">
+            <a href="#apropos">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#contact" class="cta-button">Prendre RDV</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Le numérique, simplement.</h1>
+        <p>Un accompagnement personnalisé, patient et à domicile pour aider les seniors à maîtriser l'informatique et les démarches en ligne.</p>
+        <a href="#contact" class="cta-button" style="font-size: 1.2rem;">Demander de l'aide</a>
+    </header>
+
+    <section id="apropos">
+        <h2>Pourquoi WebHelp ?</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <p>De plus en plus de démarches se font en ligne, mais la technologie peut parfois sembler compliquée ou effrayante. Souvent, les proches n'ont pas le temps ou la patience nécessaire pour expliquer calmement.</p>
+            <p><strong>WebHelp</strong> est né d'une volonté simple : créer un lien intergénérationnel pour rompre l'isolement numérique.</p>
+        </div>
+    </section>
+
+    <section id="services" style="background-color: #f0f4f8;">
+        <h2>Mes Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🖥️ Initiation Informatique</h3>
+                <p>Apprenez à utiliser votre ordinateur, tablette ou smartphone à votre rythme.</p>
+                <ul style="text-align: left;">
+                    <li>Envoyer des e-mails</li>
+                    <li>Utiliser WhatsApp / Skype</li>
+                    <li>Naviguer sur Internet</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>📄 Aide Administrative</h3>
+                <p>Ne soyez plus bloqué par les formulaires en ligne.</p>
+                <ul style="text-align: left;">
+                    <li>Déclaration d'impôts</li>
+                    <li>Site de la CAF / Ameli</li>
+                    <li>Paiement de factures en ligne</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🛠️ Dépannage Simple</h3>
+                <p>Une aide rapide pour les petits tracas du quotidien.</p>
+                <ul style="text-align: left;">
+                    <li>Installation d'imprimante</li>
+                    <li>Mise à jour de logiciels</li>
+                    <li>Organisation de fichiers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2>Un service différent</h2>
+        <ul class="benefits-list">
+            <li><strong>À domicile :</strong> Je me déplace chez vous, pas besoin de bouger.</li>
+            <li><strong>Patience et Bienveillance :</strong> On prend le temps qu'il faut, sans stress.</li>
+            <li><strong>Sur-mesure :</strong> Adapté à votre niveau et à vos besoins réels.</li>
+            <li><strong>Confiance :</strong> Un interlocuteur unique et discret.</li>
+            <li><strong>Tarif adapté :</strong> Un service pensé pour le budget des seniors.</li>
+        </ul>
+    </section>
+
+    <section id="fondateur">
+        <h2>Qui suis-je ?</h2>
+        <div class="founder">
+            <img src="https://via.placeholder.com/200" alt="Joshua Sebag" class="founder-img">
+            <div class="founder-text">
+                <h3>Joshua Sebag</h3>
+                <p>Porteur du projet WebHelp, je suis un jeune passionné par le numérique et l'entraide. </p>
+                <p>J'ai constaté que beaucoup de seniors se sentaient isolés face à la modernisation rapide des services. J'ai créé WebHelp pour apporter une solution humaine, locale et chaleureuse. Mon objectif n'est pas seulement de résoudre un problème technique, mais de vous rendre autonome et confiant.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <p>Vous avez une question ou besoin d'un coup de main ?</p>
+        <div style="font-size: 1.2rem; margin-top: 20px;">
+            <p>📧 Email : <strong>joshua.sebahg@gmail.com</strong></p>
+            <p>📍 Zone d'intervention : [Ta Ville / Région]</p>
+        </div>
+        <br>
+        <a href="mailto:joshua.sebahg@gmail.com" class="cta-button">M'envoyer un email</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WebHelp - Par Joshua Sebag. Tous droits réservés.</p>
+        <p style="font-size: 0.8rem;">Micro-entreprise - Service à la personne</p>
+    </footer>
+
+</body>
+</html>
