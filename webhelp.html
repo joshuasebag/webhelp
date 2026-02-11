@@ -1,149 +1,327 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBHELP - L'aide numérique pour tous</title>
-    <style>
-        /* --- CHARTE GRAPHIQUE WEBHELP --- */
-        :root {
-            /* Couleurs extraites de tes images */
-            --brand-blue: #287ab8;   /* Le bleu du "WEB" */
-            --brand-orange: #f68e2f; /* Le orange du "HELP" */
-            --text-dark: #333;
-            --light-bg: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebHelp – Assistance Numérique Seniors</title>
+  <style>
+    /* --- CHARTE GRAPHIQUE WEBHELP --- */
+    :root {
+      --primary-blue: #287ab8;
+      --primary-orange: #f68e2f;
+      --dark-text: #1f2a44;
+      --light-bg: #f9f9f9;
+      --white: #ffffff;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--white);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
 
-        /* --- NAVIGATION --- */
-        nav {
-            background-color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* --- HEADER --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    header .logo {
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 24px;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      display: flex; 
+      align-items: center;
+      gap: 10px;
+    }
+    header .logo span { color: var(--primary-orange); }
 
-        /* Reproduction du Logo WEBHELP en CSS */
-        .logo {
-            font-family: "Impact", "Arial Black", sans-serif; /* Police épaisse comme sur l'image */
-            font-size: 2.5rem;
-            text-decoration: none;
-            letter-spacing: -1px; /* Lettres rapprochées */
-            text-transform: uppercase;
-        }
-        .logo-web { color: var(--brand-blue); }
-        .logo-help { color: var(--brand-orange); }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--dark-text);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: var(--primary-blue);
+    }
+    nav a.cta {
+        background: var(--primary-orange);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+    nav a.cta:hover { background: #e07d20; }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            margin-left: 20px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--brand-blue); }
+    /* --- HERO (Accueil) --- */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      background: linear-gradient(180deg, #f5f3ef 0%, #fff 100%);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .hero-circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      border: 5px solid var(--primary-blue);
+      overflow: hidden;
+    }
+    
+    .hero-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .cta-button {
-            background-color: var(--brand-orange);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px; /* Boutons arrondis */
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.2s;
-            display: inline-block;
-        }
-        .cta-button:hover {
-            background-color: #e07d20;
-            transform: translateY(-2px);
-        }
+    .hero-text h1 {
+        font-size: 2.5rem;
+        color: var(--primary-blue);
+        margin-bottom: 10px;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+    }
 
-        /* --- HEADER (HERO) --- */
-        header {
-            background: linear-gradient(135deg, var(--brand-blue) 0%, #1a5c8e 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-family: "Impact", sans-serif; /* Rappel du style logo */
-        }
-        header p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 40px auto; }
+    /* --- SECTIONS --- */
+    section { padding: 80px 5%; }
+    
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--primary-blue);
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
 
-        /* --- SECTIONS --- */
-        section { padding: 60px 20px; }
-        h2 {
-            color: var(--brand-blue);
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 50px;
-            font-family: "Impact", sans-serif;
-            letter-spacing: 1px;
-        }
+    /* --- SERVICES (GRID) --- */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .service-card {
+        background: var(--light-bg);
+        padding: 30px;
+        border-radius: 10px;
+        border-top: 4px solid var(--primary-orange);
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card h3 { margin-bottom: 15px; color: var(--dark-text); }
 
-        /* --- SERVICES (CARTES) --- */
-        .services-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            width: 300px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-top: 6px solid var(--brand-orange); /* Touche orange */
-            transition: transform 0.3s;
-        }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-card h3 { color: var(--brand-blue); margin-top: 0; }
+    /* --- A PROPOS --- */
+    .about-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .about-text {
+        flex: 1;
+        min-width: 300px;
+        text-align: justify;
+    }
 
-        /* --- QUI SUIS-JE (Joshua) --- */
-        .founder-section {
-            background-color: var(--light-bg);
-            text-align: center;
-        }
-        .founder-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            max-width: 900px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-        .founder-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .founder-text { flex: 1; text-align: left; min-width: 300px; }
+    /* --- CONTACT --- */
+    .contact-container {
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .contact-info {
+      width: 40%;
+      padding: 50px;
+      background: var(--primary-blue);
+      color: white;
+    }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 20px; color: white; }
+    
+    .contact-form {
+      width: 60%;
+      padding: 50px;
+    }
 
-        /* --- CONTACT --- */
-        .contact-section { text-align: center; }
-        .contact-box {
-            background: var(--brand-blue);
-            color: white;
-            display: inline-block;
-            padding: 4
+    @media (max-width: 768px) {
+        .contact-info, .contact-form { width: 100%; }
+        header { padding: 15px; flex-direction: column; gap: 10px; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        nav a { margin: 0 10px; }
+    }
+
+    /* Form Styles */
+    form label { font-size: 0.8rem; font-weight: bold; color: #666; letter-spacing: 1px;}
+    form input, form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background: #fafafa;
+    }
+    .row { display: flex; gap: 20px; }
+    .row div { flex: 1; }
+
+    button[type="submit"] {
+        background: var(--primary-orange);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    button[type="submit"]:hover { background: #e07d20; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f5f3ef;
+    }
+  </style>
+</head>
+<body id="home">
+
+  <header>
+    <div class="logo">WEB<span>HELP</span></div>
+    <nav>
+      <a href="#home">ACCUEIL</a>
+      <a href="#services">SERVICES</a>
+      <a href="#about">À PROPOS</a>
+      <a href="#contact" class="cta">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero-circle">
+      <img src="logo.png" alt="Logo WebHelp" onerror="this.src='https://via.placeholder.com/300x300?text=WEBHELP'">
+    </div>
+    <div class="hero-text">
+        <h1>Le Numérique, Simplement.</h1>
+        <p>Accompagnement administratif et informatique à domicile pour les seniors. Patience, écoute et pédagogie.</p>
+        <a href="#contact" style="background:var(--primary-blue); color:white; padding:10px 20px; text-decoration:none; border-radius:30px;">Prendre Rendez-vous</a>
+    </div>
+  </main>
+
+  <section id="services" style="background: white;">
+    <h2>Mes Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>🖥️ Initiation Informatique</h3>
+            <p>Apprenez à utiliser votre ordinateur, tablette ou smartphone à votre rythme (e-mails, photos, WhatsApp).</p>
+        </div>
+        <div class="service-card">
+            <h3>📄 Aide Administrative</h3>
+            <p>Ne bloquez plus sur les formulaires en ligne : Impôts, CAF, Ameli, factures.</p>
+        </div>
+        <div class="service-card">
+            <h3>🛠️ Assistance Technique</h3>
+            <p>Installation d'imprimante, mise à jour, sécurité et rangement de fichiers.</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="about" style="background: #f5f3ef;">
+    <h2>Qui suis-je ?</h2>
+    <div class="about-container">
+        <img src="profil.jpg" alt="Joshua Sebag" style="width:200px; height:200px; border-radius:50%; object-fit:cover; border:4px solid white;" onerror="this.src='https://via.placeholder.com/200?text=Joshua'">
+        
+        <div class="about-text">
+            <h3>Joshua Sebag</h3>
+            <p><strong>Porteur du projet WebHelp.</strong></p>
+            <p>J'ai constaté que beaucoup de seniors se sentaient isolés face à la modernisation rapide des services. J'ai créé WebHelp pour apporter une solution humaine et locale.</p>
+            <p>Mon objectif n'est pas seulement de résoudre un problème technique, mais de vous rendre autonome et confiant. Je me déplace chez vous pour prendre le temps d'expliquer calmement.</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contactez-moi</h3>
+        <p>
+          <strong>Besoin d’un coup de main ?</strong><br><br>
+          Que ce soit pour une démarche administrative urgente ou une formation longue durée, je suis à votre écoute.
+        </p>
+        <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin: 30px 0;">
+        <p>📧 joshua.sebahg@gmail.com</p>
+        <p>📍 Déplacement à domicile</p>
+        <p>🤝 Service à la Personne</p>
+      </div>
+      
+      <div class="contact-form">
+        <form>
+          <div class="row">
+              <div>
+                <label>PRÉNOM *</label>
+                <input type="text" placeholder="Votre prénom"> 
+              </div>
+              <div>
+                <label>NOM *</label>
+                <input type="text" placeholder="Votre nom">
+              </div>
+          </div>
+
+          <label>EMAIL *</label>
+          <input type="email" placeholder="exemple@email.com">
+
+          <label>COMMENTAIRE / BESOIN *</label>
+          <textarea placeholder="Bonjour, je voudrais de l'aide pour..."></textarea>
+
+          <button type="submit">ENVOYER DEMANDE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 WEBHELP - Joshua Sebag</p>
+  </footer>
+
+</body>
+</html>
