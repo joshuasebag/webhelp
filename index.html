@@ -21,7 +21,7 @@
         .logo-brand { font-size: 1.5rem; font-weight: bold; color: #2980b9; text-decoration: none; }
         .logo-brand span { color: #e67e22; }
         .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
-        .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 0.9rem; }
         .btn-nav-contact { background: #e67e22; color: #fff !important; padding: 8px 18px; border-radius: 20px; }
 
         /* --- HERO SECTION --- */
@@ -59,12 +59,6 @@
         .about-text { max-width: 500px; text-align: left; }
         .project-tag { color: #e67e22; font-weight: bold; margin-bottom: 10px; display: block; }
 
-        /* --- CONTACT FORM --- */
-        .contact { padding: 80px 5%; background: #2c3e50; color: #fff; text-align: center; }
-        .contact-form { max-width: 500px; margin: 40px auto; display: flex; flex-direction: column; gap: 15px; }
-        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 8px; border: none; font-size: 1rem; }
-        .btn-submit { background: #e67e22; color: #fff; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
-
         /* --- BULLE WHATSAPP FLOTTANTE --- */
         .whatsapp-float {
             position: fixed;
@@ -89,6 +83,12 @@
             transform: scale(1.1);
             background-color: #128c7e;
         }
+
+        /* --- CONTACT SECTION --- */
+        .contact { padding: 80px 5%; background: #2c3e50; color: #fff; text-align: center; }
+        .contact-form { max-width: 500px; margin: 40px auto; display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 8px; border: none; font-size: 1rem; }
+        .btn-submit { background: #e67e22; color: #fff; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
         footer { padding: 30px; background: #1a252f; color: #bdc3c7; text-align: center; }
 
@@ -121,7 +121,7 @@
             <img src="logo-webhelp.png" alt="Logo WEB AIDE">
         </div>
         <h1>Le Numérique, Simplement.</h1>
-        <p>Accompagnement administratif et informatique à domicile pour les seniors. Patience, écoute et pédagogie[cite: 56, 70, 77].</p>
+        <p>Accompagnement administratif et informatique à domicile pour les seniors. Patience, écoute et pédagogie. [cite: 9, 22, 70]</p>
         <a href="#contact" class="btn-main">Prendre Rendez-vous</a>
     </header>
 
@@ -131,17 +131,17 @@
             <div class="service-card">
                 <span class="service-icon">📱</span>
                 <h3>Smartphone & Tablette</h3>
-                <p>Apprendre à utiliser vos appareils pour rester connecté avec vos proches[cite: 14, 55].</p>
+                <p>Apprendre à utiliser vos appareils pour rester connecté avec vos proches. [cite: 9, 14, 55]</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">💻</span>
                 <h3>Informatique</h3>
-                <p>Installation, navigation sécurisée et gestion de vos outils numériques[cite: 9, 34, 55].</p>
+                <p>Installation, navigation sécurisée et gestion de vos outils numériques. [cite: 9, 14, 34]</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">📄</span>
                 <h3>Aide Administrative</h3>
-                <p>Accompagnement personnalisé pour vos démarches en ligne en toute sécurité[cite: 14, 54, 75].</p>
+                <p>Accompagnement personnalisé pour vos démarches en ligne en toute sécurité. [cite: 9, 14, 54]</p>
             </div>
         </div>
     </section>
@@ -155,26 +155,26 @@
             <div class="about-text">
                 <span class="project-tag">Porteur du projet WebHelp [cite: 7, 8]</span>
                 <h3>Joshua Sebag</h3>
-                <p>J'ai constaté que beaucoup de seniors se sentaient isolés face à la modernisation rapide des services[cite: 14, 32]. J'ai créé WebHelp pour apporter une solution humaine et locale[cite: 22, 70, 72].</p>
-                <p>Mon objectif est de vous rendre autonome et confiant en prenant le temps d'expliquer calmement chez vous[cite: 70, 73, 77].</p>
+                <p>J'ai constaté que beaucoup de seniors se sentaient isolés face à la modernisation rapide des services[cite: 14, 32]. J'ai créé WebHelp pour apporter une solution humaine et locale[cite: 22, 43, 72].</p>
+                <p>Mon objectif est de vous rendre autonome et confiant en prenant le temps d'expliquer calmement chez vous[cite: 9, 70, 77].</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>ME CONTACTER</h2>
-        <p>Une question ? Un rendez-vous ? Écrivez-moi !</p>
         <form class="contact-form">
             <input type="text" placeholder="Votre Nom" required>
             <input type="email" placeholder="Votre Email" required>
             <textarea rows="5" placeholder="Votre besoin..." required></textarea>
             <button type="submit" class="btn-submit">Envoyer ma demande</button>
         </form>
-        <p>Ou par email : <strong>joshua.sebahg@gmail.com</strong> [cite: 80]</p>
+        <p>Email direct : <strong>joshua.sebahg@gmail.com</strong> [cite: 80]</p>
+        <p>Téléphone : <strong>06 95 79 56 76</strong></p>
     </section>
 
     <footer>
-        © 2026 WEB AIDE - Joshua Sebag [cite: 1, 11]
+        © 2026 WEB AIDE - Joshua Sebag
     </footer>
 
 </body>
